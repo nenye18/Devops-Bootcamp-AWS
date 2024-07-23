@@ -23,9 +23,9 @@ pipeline {
             steps {
                 script {
                     echo "Deploying the application..."
-                    def dockerCMD = 'docker run -p 3000:3000 -d cnwagba/jenkins-repo-dockerhub:1.0.1'
+                    def dockerCmd = 'docker run -p 3000:3000 -d cnwagba/jenkins-repo-dockerhub:1.0.4-28'
                     sshagent(['ec2-key']) {
-                        sh "ssh -o StrictHostKeyChecking=no ec2-user@54.174.84.169 ${dockerCmd}"
+                        sh "ssh -o StrictHostKeyChecking=no ec2-user@52.23.229.178${dockerCmd}"
                     }
                 }
             }
