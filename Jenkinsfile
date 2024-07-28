@@ -1,5 +1,12 @@
 #!/usr/bin.env groovy
 
+library identifier: 'jenkins-shared-library@master', retriever: modernSCM(
+    [$class: 'GitSCMSource',
+    remote: 'https://github.com/nenye18/Jenkins-shared-lib.git',
+    credentialsID: 'GitHub credentials'
+    ]
+)
+
 pipeline {   
     agent any
     stages {
